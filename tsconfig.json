@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "module": "commonjs",
     "moduleResolution": "node",
-    "jsx": "react",
     "declaration": true,
     "pretty": true,
     "rootDir": "src",
@@ -17,7 +16,7 @@
     "noFallthroughCasesInSwitch": true,
     "outDir": "lib",
     "lib": [
-      "es2018",
+      "esnext",
       "dom"
     ],
     "importHelpers": true
@@ -25,10 +24,6 @@
   "exclude": [
     "node_modules",
     "lib",
-    "esm",
-    "tests",
-    "stories",
-    "jest.config.ts",
-    "jest.config.*.ts"
+    "esm"
   ]
 }
