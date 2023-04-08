@@ -1,0 +1,32 @@
+{
+  "name": "@kyri123/k-javascript-utils",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kyri123/k-reactutils.git"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "module": "esm/index.js",
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "dependencies": {},
+  "scripts": {
+    "dev": "npx nodemon ./src/test.ts",
+    "build": "yarn build:cjs && yarn build:es",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm"
+  },
+  "devDependencies": {
+    "@types/node": "^16.18.23",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}
