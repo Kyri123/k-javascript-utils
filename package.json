@@ -18,12 +18,17 @@
   "dependencies": {},
   "scripts": {
     "dev": "npx nodemon ./src/test.ts",
-    "build": "yarn build:cjs && yarn build:es",
+    "build": "yarn build:lint && yarn build:cjs && yarn build:es",
+    "build:lint": "eslint src --fix",
     "build:cjs": "tsc",
     "build:es": "tsc -m esNext --outDir esm"
   },
   "devDependencies": {
     "@types/node": "^16.18.23",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-plugin-import": "^2.27.5",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "tslib": "^2.5.0",

@@ -1,2 +1,2 @@
 import "./useAddons";
-import "./index"
+import "./index";

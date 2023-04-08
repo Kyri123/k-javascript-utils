@@ -1,3 +1,3 @@
-import "./Addons/Array"
-import "./Addons/String"
-import "./Addons/Math"
+import "./Addons/Array";
+import "./Addons/String";
+import "./Addons/Math";
