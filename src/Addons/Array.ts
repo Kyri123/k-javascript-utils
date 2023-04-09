@@ -21,11 +21,13 @@ declare global {
 
 		/**
 		 * Swap 2 Array Elements
+		 * @returns if one of both Index invalid returns false
 		 */
 		swapElements( A : number, B : number ) : boolean;
 
 		/**
-		 * returns true if the index at valid (not undefined)
+		 * Check if an element exists in any given Index
+		 * @returns true if the index at valid (not undefined)
 		 */
 		idxValid( Index : number ) : boolean;
 

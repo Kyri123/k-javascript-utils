@@ -1,5 +1,9 @@
 declare global {
 	interface Math {
+		/**
+		 * clamp a number between `min` and `max`
+		 * @returns the clamped Number
+		 */
 		clamp( min : number, value : number, max : number ) : number;
 	}
 }
