@@ -103,10 +103,10 @@ interface Array<T> {
 const Arr = [ 8, 645, 1258, 457, 623 ]
 
 Arr.rmFromIndex( 1 )
-console.log( Arr ) // [ 8, 600, 1258, 457, 623 ]
+console.log( Arr ) // [ 8, 1258, 457, 623 ]
 
-Arr.rmFromIndex( [ 2, 4 ] )
-console.log( Arr ) // [ 8, 600, 457 ]
+Arr.rmFromIndex( [ 2, 3 ] )
+console.log( Arr ) // [ 8, 1258 ]
 ```
 
 ### swapElements()
@@ -220,6 +220,6 @@ interface String {
 }
 
 const String : string = "Hello World!\nI'm a string...";
-console.log( String.clearWs( "heLLoWorld!" ) ); // true
-console.log( String.clearWs( "heLLoWorld!", false ) ); // false
+console.log( String.contains( "heLLoWorld!" ) ); // true
+console.log( String.contains( "heLLoWorld!", false ) ); // false
 ```
