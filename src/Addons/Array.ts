@@ -36,8 +36,54 @@ declare global {
 		 * @returns return the removed element or undefined if no element was replaced
 		 */
 		replaceIdx( NewObject : T, Index : number ) : T | undefined;
+
+		/**
+		 * clear all elements from the array
+		 */
+		empty() : Array<T>;
+
+		/**
+		 * Check if the array is empty
+		 * @returns true if the array is empty
+		 */
+		isEmpty() : boolean;
+
+		/**
+		 * modified version of contact
+		 * @param OtherArray Array to compare with
+		 * @param ClearOtherArray Should the other array be cleared? (default false)
+		 * @returns the current Array
+		 */
+		append( OtherArray : T, ClearOtherArray? : boolean ) : Array<T>;
 	}
 }
+
+Array.prototype.isEmpty = function() : boolean {
+	return this.length === 0;
+};
+
+Array.prototype.empty = function <T>() : Array<T> {
+	this.length = 0;
+	return this;
+};
+
+Array.prototype.append = function <T>( OtherArray : Array<T>, ClearOtherArray  = false ) : Array<T> {
+	const NewArray = [ ...this ];
+	this.length = 0;
+	this.push( ...NewArray.concat( OtherArray ) );
+	if ( ClearOtherArray ) {
+		OtherArray.empty();
+	}
+	return this;
+};
+
+Array.prototype.replaceIdx = function <T>( NewObject : T, Index : number ) : T | undefined {
+	if ( Index <= INDEX_NONE || Index >= this.length ) {
+		return undefined;
+	}
+
+	return this.splice( Index, 1, NewObject )[ 0 ];
+};
 
 Array.prototype.replaceIdx = function <T>( NewObject : T, Index : number ) : T | undefined {
 	if ( Index <= INDEX_NONE || Index >= this.length ) {

@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
+    "declaration": true,
     "target": "ESNext",
     "module": "commonjs",
     "moduleResolution": "node",
-    "declaration": true,
     "pretty": true,
     "rootDir": "src",
     "sourceMap": false,

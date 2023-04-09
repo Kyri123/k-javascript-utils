@@ -5,7 +5,7 @@
  * @param SplitterCharEvery where to split the string
  * @constructor
  */
-export function MakeRandomString( length : number, SplitterChar : string = "", SplitterCharEvery : number = 5 ) : string {
+export function MakeRandomString( length : number, SplitterChar  = "", SplitterCharEvery  = 5 ) : string {
 	let result = "";
 	const characters =
 		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";

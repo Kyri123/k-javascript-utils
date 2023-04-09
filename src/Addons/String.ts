@@ -23,7 +23,7 @@ String.prototype.clearWs = function() {
 	return this.replace( /[\s\n\r]+/g, "" );
 };
 
-String.prototype.contains = function( searchingFor : string, Ws : boolean = true ) {
+String.prototype.contains = function( searchingFor : string, Ws  = true ) {
 	if ( Ws ) {
 		return this.toLowerCase().clearWs().includes( searchingFor.toLowerCase().clearWs() );
 	}

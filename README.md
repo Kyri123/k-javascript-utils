@@ -12,6 +12,65 @@ import "@kyri123/k-javascript-utils/esm/useAddons"
 
 ## Array Functions
 
+### empty()
+
+```ts
+interface Array<T> {
+	/**
+	 * clear all elements from the array
+	 */
+	empty() : Array<T>;
+}
+
+const Arr = [ 8, 645, 1258, 457, 623 ]
+
+Arr.empty()
+console.log( Arr ) // [ ]
+```
+
+### isEmpty()
+
+```ts
+interface Array<T> {
+	/**
+	 * Check if the array is empty
+	 * @returns true if the array is empty
+	 */
+	isEmpty() : boolean;
+}
+
+const Arr = [ 8, 645, 1258, 457, 623 ]
+console.log( Arr ) // false
+
+Arr.length = 0; // Arr = [ ]
+console.log( Arr ) // true
+```
+
+### append()
+
+```ts
+interface Array<T> {
+	/**
+	 * modified version of contact
+	 * @param OtherArray Array to compare with
+	 * @param ClearOtherArray Should the other array be cleared? (default false)
+	 * @returns the current Array
+	 */
+	append( OtherArray : T, ClearOtherArray? : boolean ) : Array<T>;
+}
+
+const Arr = [ 8, 645, 1258 ]
+const Arr2 = [ 457, 623 ]
+
+Arr.append( Arr2 )
+console.log( Arr ) // [ 8, 645, 1258, 457, 623 ]
+console.log( Arr2 ) // [ 457, 623 ]
+
+Arr.append( Arr2, true )
+console.log( Arr ) // [ 8, 645, 1258, 457, 623, 457, 623 ]
+console.log( Arr2 ) // [ ]
+```
+
 ### addAtIndex()
 
 ```ts
