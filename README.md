@@ -1,5 +1,15 @@
 # Javascript Utility Functions
 
+## How to use
+
+Import useAddons to your project index.ts / index.js file
+
+```ts
+import "@kyri123/k-javascript-utils/lib/useAddons"
+// or if you want to use as esm
+import "@kyri123/k-javascript-utils/esm/useAddons"
+```
+
 ## Array Functions
 
 ### addAtIndex()
