@@ -55,8 +55,37 @@ declare global {
 		 * @returns the current Array
 		 */
 		append( OtherArray : T, ClearOtherArray? : boolean ) : Array<T>;
+
+		/**
+		 * remove a element from the array
+		 * @returns return the numbers of elements removed elements
+		 * @param ShouldRemoveAllMatches should all removed that match the criteria by default false and remove only the first match
+		 * @param Element Element to check
+		 */
+		rm( Element : T | ( ( value : T, index : number, obj : T[] ) => boolean ), ShouldRemoveAllMatches? : boolean ) : number;
 	}
 }
+
+Array.prototype.rm = function <T>( Element : T | ( ( value : T, index : number, obj : T[] ) => boolean ), ShouldRemoveAllMatches : boolean = false ) : number {
+	const Func : ( value : T, index : number, obj : T[] ) => boolean = ( typeof Element === "function" ? Element : ( E => E === Element ) ) as ( value : T, index : number, obj : T[] ) => boolean;
+	let Removed = 0;
+	if ( ShouldRemoveAllMatches ) {
+		while ( this.find( Func ) !== undefined ) {
+			const Idx = this.findIndex( Func );
+			this.splice( Idx, 1 );
+			Removed++;
+		}
+	}
+	else {
+		const Idx = this.findIndex( Func );
+		if ( Idx > INDEX_NONE ) {
+			this.splice( Idx, 1 );
+			Removed++;
+		}
+	}
+
+	return Removed;
+};
 
 Array.prototype.isEmpty = function() : boolean {
 	return this.length === 0;
@@ -67,7 +96,7 @@ Array.prototype.empty = function <T>() : Array<T> {
 	return this;
 };
 
-Array.prototype.append = function <T>( OtherArray : Array<T>, ClearOtherArray  = false ) : Array<T> {
+Array.prototype.append = function <T>( OtherArray : Array<T>, ClearOtherArray = false ) : Array<T> {
 	const NewArray = [ ...this ];
 	this.length = 0;
 	this.push( ...NewArray.concat( OtherArray ) );

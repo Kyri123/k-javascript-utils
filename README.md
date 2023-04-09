@@ -12,6 +12,26 @@ import "@kyri123/k-javascript-utils/esm/useAddons"
 
 ## Array Functions
 
+### rm()
+
+```ts
+interface Array<T> {
+	/**
+	 * remove a element from the array
+	 * @returns return the numbers of elements removed elements
+	 * @param ShouldRemoveAllMatches should all removed that match the criteria by default false and remove only the first match
+	 * @param Element Element to check
+	 */
+	rm( Element : T | ( ( value : T, index : number, obj : T[] ) => boolean ), ShouldRemoveAllMatches? : boolean ) : number;
+}
+
+const Arr = [ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 11, 11, 11 ];
+console.log( Arr.rm( ( V => V === 11 ), false ), Arr ); // 1, [ 5,  6,  7,  8,  9, 10, 12, 13, 14, 15, 11, 11,  11 ]
+
+const Arr2 = [ 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 11, 11, 11 ];
+console.log( Arr2.rm( 11, true ), Arr ); // 4, [ 5,  6,  7,  8,  9, 10, 12, 13, 14, 15, 11, 11, 11 ]
+```
+
 ### empty()
 
 ```ts
