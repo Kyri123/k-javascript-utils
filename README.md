@@ -204,6 +204,22 @@ console.log( Math.clamp( 5, 8445, 855 ) ) // 855
 console.log( Math.clamp( 5, 100, 855 ) ) // 100
 ```
 
+### rnd()
+
+```ts
+interface Math {
+	/**
+	 * Generate a random integer between `min` (inclusive) and `max` (inclusive)
+	 * By default, this will return a random integer between `0` and `100`
+	 * @returns a random number between `min` (inclusive) and `max` (inclusive)
+	 */
+	rnd( min : number, max : number ) : number;
+}
+
+console.log( Math.rnd() ) // 0-100
+console.log( Math.rnd( 50, 75 ) ) // 50 - 75
+```
+
 ---
 
 ## String Functions

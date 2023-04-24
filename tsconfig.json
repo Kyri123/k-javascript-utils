@@ -1,29 +1,31 @@
 {
-  "compilerOptions": {
-    "declaration": true,
-    "target": "ESNext",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "pretty": true,
-    "rootDir": "src",
-    "sourceMap": false,
-    "strict": true,
-    "esModuleInterop": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noImplicitAny": false,
-    "noFallthroughCasesInSwitch": true,
-    "outDir": "lib",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
-    "importHelpers": true
-  },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "esm"
-  ]
+	"compilerOptions": {
+		"declaration": true,
+		"target": "ESNext",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"pretty": true,
+		"rootDir": "src",
+		"sourceMap": false,
+		"strict": true,
+		"esModuleInterop": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noImplicitAny": false,
+		"noFallthroughCasesInSwitch": true,
+		"outDir": "lib",
+		"lib": [
+			"esnext",
+			"dom"
+		],
+		"importHelpers": true
+	},
+	"exclude": [
+		"node_modules",
+		"lib",
+		"esm",
+		"**/*test.js",
+		"**/*test.ts"
+	]
 }

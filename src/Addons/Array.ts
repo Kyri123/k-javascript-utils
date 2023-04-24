@@ -66,7 +66,7 @@ declare global {
 	}
 }
 
-Array.prototype.rm = function <T>( Element : T | ( ( value : T, index : number, obj : T[] ) => boolean ), ShouldRemoveAllMatches : boolean = false ) : number {
+Array.prototype.rm = function <T>( Element : T | ( ( value : T, index : number, obj : T[] ) => boolean ), ShouldRemoveAllMatches  = false ) : number {
 	const Func : ( value : T, index : number, obj : T[] ) => boolean = ( typeof Element === "function" ? Element : ( E => E === Element ) ) as ( value : T, index : number, obj : T[] ) => boolean;
 	let Removed = 0;
 	if ( ShouldRemoveAllMatches ) {

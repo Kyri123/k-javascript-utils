@@ -1,40 +1,42 @@
 {
-  "name": "@kyri123/k-javascript-utils",
-  "version": "0.2.1",
-  "private": false,
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Kyri123/k-javascript-utils.git"
-  },
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
-  "module": "esm/index.js",
-  "files": [
-    "lib/",
-    "esm/"
-  ],
-  "dependencies": {},
-  "scripts": {
-    "dev": "npx nodemon ./src/test.ts",
-    "build": "yarn build:lint && yarn build:cjs && yarn build:es",
-    "build:lint": "eslint src --fix",
-    "build:cjs": "tsc && yarn build:cjs:copy",
-    "build:cjs:copy": "copyfiles -u 1 \"src/Types/**/*.d.ts\" lib",
-    "build:es": "tsc -m esNext --outDir esm&& yarn build:es:copy",
-    "build:es:copy": "copyfiles -u 1 \"src/Types/**/*.d.ts\" esm"
-  },
-  "devDependencies": {
-    "@types/node": "^16.18.23",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
-    "copyfiles": "^2.4.1",
-    "eslint": "^8.38.0",
-    "eslint-plugin-import": "^2.27.5",
-    "nodemon": "^2.0.22",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.5.0",
-    "typescript": "^4.9.5"
-  }
+	"name": "@kyri123/k-javascript-utils",
+	"version": "0.3.0",
+	"private": false,
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Kyri123/k-javascript-utils.git"
+	},
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"typings": "lib/index.d.ts",
+	"module": "esm/index.js",
+	"files": [
+		"lib/",
+		"esm/"
+	],
+	"dependencies": {
+		"lodash": "^4.17.21"
+	},
+	"scripts": {
+		"dev": "npx nodemon ./src/test.ts",
+		"build": "yarn build:lint && yarn build:cjs && yarn build:es",
+		"build:lint": "eslint src --fix",
+		"build:cjs": "tsc && yarn build:cjs:copy",
+		"build:cjs:copy": "copyfiles -u 1 \"src/Types/**/*.d.ts\" lib",
+		"build:es": "tsc -m esNext --outDir esm&& yarn build:es:copy",
+		"build:es:copy": "copyfiles -u 1 \"src/Types/**/*.d.ts\" esm"
+	},
+	"devDependencies": {
+		"@types/node": "^16.18.23",
+		"@typescript-eslint/eslint-plugin": "^5.57.1",
+		"@typescript-eslint/parser": "^5.57.1",
+		"copyfiles": "^2.4.1",
+		"eslint": "^8.38.0",
+		"eslint-plugin-import": "^2.27.5",
+		"nodemon": "^2.0.22",
+		"ts-node": "^10.9.1",
+		"tslib": "^2.5.0",
+		"typescript": "^4.9.5"
+	}
 }
